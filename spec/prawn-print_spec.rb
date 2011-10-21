@@ -2,10 +2,23 @@
 require "spec_helper"
 require "prawn-print"
 
-describe Prawn::Print do
+# These could use more work...
 
-  it "should have a spec" do
-  1.should == 1
+describe Prawn::Print, "#print" do
+  it "should work without arguments" do
+    pdf = Prawn::Document.new
+    lambda { pdf.print }.should_not raise_error
+  end
+end
+
+describe Prawn::Print, "#autoprint" do
+  it "should work without arguments" do
+    pdf = Prawn::Document.new
+    lambda { pdf.autoprint }.should_not raise_error
   end
 
+  it "should work with an argument" do
+    pdf = Prawn::Document.new
+    lambda { pdf.autoprint("LaserJet") }.should_not raise_error
+  end
 end

@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Prawn::Print::VERSION
   s.authors     = ["Henrik Nyh"]
   s.email       = ["henrik@barsoom.se"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/barsoom/prawn_print"
   s.summary     = %q{Autoprint generated PDFs from Adobe Reader.}
 
   s.rubyforge_project = "prawn-print"
@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_dependency "prawn-core", "~> 0.8.4"
+  s.add_dependency "prawn", "~> 0.12.0"
 
   s.add_development_dependency "rspec"
   s.add_development_dependency "guard"
