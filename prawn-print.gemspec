@@ -5,11 +5,10 @@ require "prawn-print/version"
 Gem::Specification.new do |s|
   s.name        = "prawn-print"
   s.version     = Prawn::Print::VERSION
-  s.authors     = ["Henrik N"]
-  s.email       = ["henrik@nyh.se"]
+  s.authors     = ["Henrik Nyh"]
+  s.email       = ["henrik@barsoom.se"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Autoprint generated PDFs from Adobe Reader.}
 
   s.rubyforge_project = "prawn-print"
 
@@ -18,7 +17,9 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  # specify any dependencies here; for example:
-  # s.add_development_dependency "rspec"
-  # s.add_runtime_dependency "rest-client"
+  s.add_dependency "prawn-core", "~> 0.8.4"
+
+  s.add_development_dependency "rspec"
+  s.add_development_dependency "guard"
+  s.add_development_dependency "guard-rspec"
 end
