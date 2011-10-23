@@ -17,7 +17,7 @@ module Prawn
     private
 
     def print_with_auto_to_printer(auto, printer)
-      add_docopen_js("print", x = <<-JS)
+      add_docopen_js("print", <<-JS)
 
         var pp = this.getPrintParams();
         #{interactive_js(auto)}
