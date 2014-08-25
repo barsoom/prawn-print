@@ -7,23 +7,23 @@ module Prawn
     include JS
 
     def print
-      print_with_auto_to_printer(false, nil)
+      print_with_auto_to_printer(false, nil, nil)
     end
 
-    def autoprint(printer=nil)
-      print_with_auto_to_printer(true, printer)
+    def autoprint(printer=nil, close=nil)
+      print_with_auto_to_printer(true, close, printer)
     end
 
     private
 
-    def print_with_auto_to_printer(auto, printer)
+    def print_with_auto_to_printer(auto, close, printer)
       add_docopen_js("print", <<-JS)
 
         var pp = this.getPrintParams();
         #{interactive_js(auto)}
         #{select_printer_js(printer)}
         this.print(pp);
-
+        #{close_js(close)}
       JS
     end
 
@@ -51,6 +51,14 @@ module Prawn
       else
         <<-JS
           pp.printerName = "";  // Default.
+        JS
+      end
+    end
+
+    def close_js(close)
+      if close
+        <<-JS
+          this.closeDoc();
         JS
       end
     end

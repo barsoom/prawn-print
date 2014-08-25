@@ -7,18 +7,23 @@ require "prawn-print"
 describe Prawn::Print, "#print" do
   it "should work without arguments" do
     pdf = Prawn::Document.new
-    lambda { pdf.print }.should_not raise_error
+    expect(lambda { pdf.print }).not_to raise_error
   end
 end
 
 describe Prawn::Print, "#autoprint" do
   it "should work without arguments" do
     pdf = Prawn::Document.new
-    lambda { pdf.autoprint }.should_not raise_error
+    expect(lambda { pdf.autoprint }).not_to raise_error
   end
 
   it "should work with an argument" do
     pdf = Prawn::Document.new
-    lambda { pdf.autoprint("LaserJet") }.should_not raise_error
+    expect(lambda { pdf.autoprint("LaserJet") }).not_to raise_error
+  end
+
+  it "should work with two arguments" do
+    pdf = Prawn::Document.new
+    expect(lambda { pdf.autoprint("LaserJet", true) }).not_to raise_error
   end
 end
