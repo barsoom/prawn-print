@@ -9,7 +9,7 @@ The documents can be opened in any PDF reader, but only Adobe Reader supports tr
 
 With Bundler for e.g. Ruby on Rails, add this to your `Gemfile`:
 
-    gem 'prawn-print', :git => 'git://github.com/barsoom/prawn-print.git'
+    gem 'prawn-print'
 
 and run
 
