@@ -1,6 +1,6 @@
 # Prawn Print
 
-Ruby gem that adds `print` and `autoprint` methods for Adobe Reader to generated [Prawn](http://prawn.majesticseacreature.com) PDF documents.
+Ruby gem that adds `print` and `autoprint` methods for Adobe Reader to generated [Prawn](https://github.com/prawnpdf/prawn) PDF documents.
 
 The documents can be opened in any PDF reader, but only Adobe Reader supports triggering printing in this way.
 
@@ -9,7 +9,9 @@ The documents can be opened in any PDF reader, but only Adobe Reader supports tr
 
 With Bundler for e.g. Ruby on Rails, add this to your `Gemfile`:
 
-    gem 'prawn-print'
+```ruby
+gem 'prawn-print'
+```
 
 and run
 
@@ -20,20 +22,22 @@ to install it.
 
 ## Usage
 
-    # Open print dialog, but don't autoprint.
-    pdf = Prawn::Document.new
-    pdf.text "I installed Adobe Reader and all I got was this lousy printout."
-    pdf.print
+```ruby
+# Open print dialog, but don't autoprint.
+pdf = Prawn::Document.new
+pdf.text "I installed Adobe Reader and all I got was this lousy printout."
+pdf.print
 
-    # Autoprint it on the default printer, when opened.
-    pdf = Prawn::Document.new
-    pdf.text "Help! I am trapped in a PDF factory!"
-    pdf.autoprint
+# Autoprint it on the default printer, when opened.
+pdf = Prawn::Document.new
+pdf.text "Help! I am trapped in a PDF factory!"
+pdf.autoprint
 
-    # Autoprint it on a printer where the name includes "LaserJet".
-    pdf = Prawn::Document.new
-    pdf.text "Help! I am trapped in a PDF factory!"
-    pdf.autoprint "LaserJet"
+# Autoprint it on a printer where the name includes "LaserJet".
+pdf = Prawn::Document.new
+pdf.text "Help! I am trapped in a PDF factory!"
+pdf.autoprint "LaserJet"
+```
 
 You can call `print`/`autoprint` at any place of the generated PDF – it doesn't have to be at the end.
 
