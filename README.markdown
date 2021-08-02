@@ -1,5 +1,7 @@
 # Prawn Print
 
+[![Ruby CI](https://github.com/barsoom/prawn-print/actions/workflows/ci.yml/badge.svg)](https://github.com/barsoom/prawn-print/actions/workflows/ci.yml)
+
 Ruby gem that adds `print` and `autoprint` methods for Adobe Reader to generated [Prawn](https://github.com/prawnpdf/prawn) PDF documents.
 
 The documents can be opened in any PDF reader, but only Adobe Reader supports triggering printing in this way.
