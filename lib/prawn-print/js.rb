@@ -14,7 +14,7 @@ module Prawn
       # multiple times will append the new fragment to the list.
       #
       def add_docopen_js(name, script)
-        obj = ref!(:S => :JavaScript, :JS => script)
+        obj = ref!(S: :JavaScript, JS: script)
         javascript.data.add(name, obj)
       end
 
