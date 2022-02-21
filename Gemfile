@@ -1,7 +1,8 @@
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in prawn-print.gemspec
 gemspec
+
+gem "matrix"
 
 group :development, :test do
   gem "barsoom_utils"
