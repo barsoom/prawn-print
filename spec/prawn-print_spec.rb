@@ -1,24 +1,30 @@
 # encoding: utf-8
-require "spec_helper"
 require "prawn-print"
 
 # These could use more work...
 
-describe Prawn::Print, "#print" do
-  it "should work without arguments" do
-    pdf = Prawn::Document.new
-    expect { pdf.print }.not_to raise_error
-  end
-end
+RSpec.describe Prawn::Print do
+  subject(:pdf) { Prawn::Document.new }
 
-describe Prawn::Print, "#autoprint" do
-  it "should work without arguments" do
-    pdf = Prawn::Document.new
-    expect { pdf.autoprint }.not_to raise_error
+  describe "#print" do
+    it "should work without arguments" do
+      expect {
+        pdf.print
+      }.not_to raise_error
+    end
   end
 
-  it "should work with an argument" do
-    pdf = Prawn::Document.new
-    expect { pdf.autoprint("LaserJet") }.not_to raise_error
+  describe "#autoprint" do
+    it "should work without arguments" do
+      expect {
+        pdf.autoprint
+      }.not_to raise_error
+    end
+
+    it "should work with an argument" do
+      expect {
+        pdf.autoprint("LaserJet")
+      }.not_to raise_error
+    end
   end
 end
