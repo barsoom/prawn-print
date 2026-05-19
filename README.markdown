@@ -1,3 +1,10 @@
+**2026-05-19: Retired.** We thank it for its service.
+
+👑
+🦐
+
+---
+
 # Prawn Print
 
 [![Ruby CI](https://github.com/barsoom/prawn-print/actions/workflows/ci.yml/badge.svg)](https://github.com/barsoom/prawn-print/actions/workflows/ci.yml)
